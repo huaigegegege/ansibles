@@ -1,0 +1,13 @@
+---
+- name: CI of Install WordPress, MySQL,Nginx, PHP-FPM
+  hosts: nginx
+  remote_user: root
+  become: yes
+  become_method: sudo
+  
+
+  roles:
+    - nginx
+    - sqlite
+    - python
+    - uwsgi

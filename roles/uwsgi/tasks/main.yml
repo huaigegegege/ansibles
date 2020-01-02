@@ -1,0 +1,16 @@
+---
+- name: configure devops.xml
+  template: src={{item.src}} dest={{item.dest}}
+  with_items:
+    - {src: "devops.xml", dest: "/data/wwwroot/devops/"}
+
+- name: copy 
+  template: src=check_environment.sh dest={{soft_directory}}  mode=0777
+
+- name: check environment
+  shell: chdir={{soft_directory}}  /bin/sh check_environment.sh
+  ignore_errors: true
+  register: info
+
+- name: the response of check environment
+  debug: msg="{{info.stdout_lines}}"

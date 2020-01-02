@@ -1,0 +1,19 @@
+---
+- name: Copy file
+  template: src=python_install.sh dest={{soft_directory}} mode=0777
+
+- name: excute shell script
+  shell: chdir={{soft_directory}} /bin/sh python_install.sh
+  register: info
+  ignore_errors: true
+
+- name: response
+  debug: msg="{{ info.stdout_lines }}"
+
+- name: Initial python project
+  template: src={{item.src}} dest={{item.dest}}
+  with_items:
+    - {src: "settings.py", dest: "/data/wwwroot/devops/devops/"}
+    - {src: "urls.py", dest: "/data/wwwroot/devops/devops/"}
+    - {src: "views.py", dest: "/data/wwwroot/devops/app/"}
+    - {src: "index.html", dest: "/data/wwwroot/devops/templates/"}
