@@ -1,0 +1,8 @@
+---
+soft_directory: /home/buhuai/nginx.uwsgi.django
+sqlite_version: autoconf-3270200
+python_version: 3.6.6
+sqlite_install_directory: /usr/local
+role: buhuai
+repo_url: https://github.com/huaigegegege/report.git
+repo_directory: /data/repo

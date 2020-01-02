@@ -1,0 +1,22 @@
+---
+- name: copy script
+  template: src=deployment.sh dest={{soft_directory}} mode=0777
+
+- name: clone git resposity of Django Project
+  git: path={{repo_url}} dest={{repo_directory}} accept_hostkey=yes
+
+- name: sycn code to live-project
+  shell: chdir={{soft_directory}} /bin/sh deployment.sh
+  register: info
+  error_ignores: true
+
+- name: sync code resposne
+  debug: msg={{info.stdout_lines}}
+
+- name: clear code
+  shell: rm -rf /data/repo/*
+  register: info
+  error_ignores: true
+
+- name: clear code response
+  debug: msg={{info.stdout_lines}}
