@@ -6,3 +6,6 @@ sqlite_install_directory: /usr/local
 role: buhuai
 repo_url: https://github.com/huaigegegege/report.git
 repo_directory: /data/repo
+
+git_pro_name: report
+live_pro_name: devops
