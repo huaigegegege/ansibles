@@ -22,7 +22,11 @@ isExists=`ls -a /usr/bin/ | grep virtualenv`
 if [ "$isExists" != "virtualenv" ]; then
     pip3 install virtualenv
     ln -s /usr/local/python3/bin/virtualenv /usr/bin/virtualenv
+else
+    echo "virtualenv has been installed"
+fi
 
+if [ ! -d "/data/env/pyweb" ]; then
     cd /data/env
     virtualenv --python=/usr/bin/python3 pyweb
     source /data/env/pyweb/bin/activate
@@ -32,13 +36,13 @@ if [ "$isExists" != "virtualenv" ]; then
     pip3 install django-bootstrap3
 
     ln -s /usr/local/python3/bin/uwsgi /usr/bin/uwsgi
+fi
 
+if [ ! -d "/data/wwwroot/devops" ]; then
     cd /data/wwwroot
     django-admin.py startproject devops
     cd devops
     python3 manage.py startapp app
     mkdir static
     mkdir templates
-else
-    echo "virtualenv has been installed"
 fi
