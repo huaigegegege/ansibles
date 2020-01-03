@@ -1,5 +1,5 @@
 ---
-soft_directory: /home/buhuai/nginx.uwsgi.django
+soft_directory: /home/buhuai/ansibles
 sqlite_version: autoconf-3270200
 python_version: 3.6.6
 sqlite_install_directory: /usr/local

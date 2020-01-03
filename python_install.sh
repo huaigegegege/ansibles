@@ -2,11 +2,11 @@
 
 isExists=`ls -a /usr/bin/ | grep python3`
 if [ "$isExists" != "python3" ];then
-    cd {{soft_directory}}
-    cp roles/python/files/Python-{{python_version}}.tgz /usr/local/
+    cd /home/buhuai/ansibles
+    cp roles/python/files/Python-3.6.6.tgz /usr/local/
     cd /usr/local/
-    tar -zxvf Python-{{python_version}}.tgz
-    cd Python-{{python_version}}
+    tar -zxvf Python-3.6.6.tgz
+    cd Python-3.6.6
     ./configure --prefix=/usr/local/python3
     make && make install
     ln -s -f /usr/local/python3/bin/python3.6 /usr/bin/python3

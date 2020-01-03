@@ -24,11 +24,11 @@
     - /data/software
     - /data/repo
 
-- name: download
-  get_url: url="{{item.url}}" dest="{{item.dest}}" mode=0755
-  with_items:
-    - { url: "https://www.sqlite.org/2019/sqlite-{{sqlite_version}}.tar.gz",dest: "{{soft_directory}}/roles/sqlite/files/" }
-    - { url: "https://www.python.org/ftp/python/{{python_version}}/Python-{{python_version}}.tgz", dest: "{{soft_directory}}/roles/python/files/" }
+#- name: download
+#  get_url: url="{{item.url}}" dest="{{item.dest}}" mode=0755
+#  with_items:
+#    - { url: "https://www.sqlite.org/2019/sqlite-{{sqlite_version}}.tar.gz",dest: "{{soft_directory}}/roles/sqlite/files/" }
+#    - { url: "https://www.python.org/ftp/python/{{python_version}}/Python-{{python_version}}.tgz", dest: "{{soft_directory}}/roles/python/files/" }
 
 - name: Copy file
   template: src=sqlite_install.sh dest={{soft_directory}} mode=0777
