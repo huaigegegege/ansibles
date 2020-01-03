@@ -4,7 +4,7 @@
     sudo yum install -y ansible
     sudo yum install -y git
 
-## clone ansible project from git repository
+## Git clone ansible project from git repository
     git clone https://github.com/huaigegegege/ansibles.git
 
 ## Automatically build online environment. CI.yml
