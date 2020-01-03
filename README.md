@@ -14,7 +14,7 @@
 ## Automatically deploy or upgrade django projects
     ansible-playbook -i hosts CD.yml
 
-### note
+### Note
 * soft_directory: ansible项目根目录
 * sqlite_version： sqlite版本
 * python_version： python版本
