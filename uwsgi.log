@@ -173,3 +173,244 @@ WSGI app 0 (mountpoint='') ready in 2 seconds on interpreter 0xed0cf0 pid: 56909
   warnings.warn(msg)
 Not Found: /favicon.ico
 [pid: 56909|app: 0|req: 1/2] 167.220.232.102 () {46 vars in 819 bytes} [Fri Jan  3 05:50:49 2020] GET /favicon.ico => generated 2346 bytes in 3142 msecs (HTTP/1.1 404) 4 headers in 129 bytes (1 switches on core 0)
+Internal Server Error: /query/allpublisher
+Traceback (most recent call last):
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/backends/utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 396, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such table: app_publisher
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./app/views.py", line 39, in query
+    show=controls.all_publisher()
+  File "./app/controls.py", line 137, in all_publisher
+    for child in publisher.objects.values():
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/models/query.py", line 276, in __iter__
+    self._fetch_all()
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/models/query.py", line 1261, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/models/query.py", line 115, in __iter__
+    for row in compiler.results_iter(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size):
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1089, in results_iter
+    results = self.execute_sql(MULTI, chunked_fetch=chunked_fetch, chunk_size=chunk_size)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1137, in execute_sql
+    cursor.execute(sql, params)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/backends/utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/backends/utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/backends/utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/backends/utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/backends/utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 396, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such table: app_publisher
+[pid: 56910|app: 0|req: 2/3] 167.220.232.102 () {48 vars in 953 bytes} [Fri Jan  3 05:56:11 2020] GET /query/allpublisher => generated 131771 bytes in 402 msecs (HTTP/1.1 500) 5 headers in 157 bytes (1 switches on core 0)
+Internal Server Error: /query/havempnidbutnooffer
+Traceback (most recent call last):
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/backends/utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 396, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such table: app_publisher
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./app/views.py", line 43, in query
+    show=controls.have_mpnid_but_nooffer()
+  File "./app/controls.py", line 173, in have_mpnid_but_nooffer
+    for item in ds:
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/models/query.py", line 276, in __iter__
+    self._fetch_all()
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/models/query.py", line 1261, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/models/query.py", line 115, in __iter__
+    for row in compiler.results_iter(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size):
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1089, in results_iter
+    results = self.execute_sql(MULTI, chunked_fetch=chunked_fetch, chunk_size=chunk_size)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1137, in execute_sql
+    cursor.execute(sql, params)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/backends/utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/backends/utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/backends/utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/backends/utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/backends/utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 396, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such table: app_publisher
+[pid: 56910|app: 0|req: 3/4] 167.220.232.102 () {48 vars in 966 bytes} [Fri Jan  3 05:56:12 2020] GET /query/havempnidbutnooffer => generated 130599 bytes in 283 msecs (HTTP/1.1 500) 5 headers in 157 bytes (1 switches on core 0)
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0xed0cf0 pid: 56911 (default app)
+Internal Server Error: /query/publishvmorarm
+Traceback (most recent call last):
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/backends/utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 396, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such table: app_publisher
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./app/views.py", line 45, in query
+    show=controls.publish_vm_or_arm()
+  File "./app/controls.py", line 188, in publish_vm_or_arm
+    for item in ds:
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/models/query.py", line 276, in __iter__
+    self._fetch_all()
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/models/query.py", line 1261, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/models/query.py", line 115, in __iter__
+    for row in compiler.results_iter(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size):
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1089, in results_iter
+    results = self.execute_sql(MULTI, chunked_fetch=chunked_fetch, chunk_size=chunk_size)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1137, in execute_sql
+    cursor.execute(sql, params)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/backends/utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/backends/utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/backends/utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/backends/utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/backends/utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 396, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such table: app_publisher
+[pid: 56909|app: 0|req: 2/5] 167.220.232.102 () {48 vars in 956 bytes} [Fri Jan  3 05:56:12 2020] GET /query/publishvmorarm => generated 132017 bytes in 313 msecs (HTTP/1.1 500) 5 headers in 157 bytes (1 switches on core 0)
+WSGI app 0 (mountpoint='') ready in 2 seconds on interpreter 0xed0cf0 pid: 56912 (default app)
+/data/env/pyweb/lib/python3.6/site-packages/pandas/compat/__init__.py:85: UserWarning: Could not import the lzma module. Your installed Python is incomplete. Attempting to use lzma compression will result in a RuntimeError.
+  warnings.warn(msg)
+Internal Server Error: /query/blockedduetonompnidornooffer
+Traceback (most recent call last):
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/backends/utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 396, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such table: app_publisher
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./app/views.py", line 41, in query
+    show=controls.blocked_due_to_nompnid_or_nooffer()
+  File "./app/controls.py", line 146, in blocked_due_to_nompnid_or_nooffer
+    obj_publisher=SqlUtils.all_publisher()
+  File "./app/sqlutils.py", line 27, in all_publisher
+    for ch in publisher.objects.all():
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/models/query.py", line 276, in __iter__
+    self._fetch_all()
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/models/query.py", line 1261, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/models/query.py", line 57, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1137, in execute_sql
+    cursor.execute(sql, params)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/backends/utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/backends/utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/backends/utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/backends/utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/backends/utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 396, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such table: app_publisher
+[pid: 56911|app: 0|req: 1/6] 167.220.232.102 () {48 vars in 985 bytes} [Fri Jan  3 05:56:11 2020] GET /query/blockedduetonompnidornooffer => generated 130776 bytes in 3759 msecs (HTTP/1.1 500) 5 headers in 157 bytes (1 switches on core 0)
+/data/env/pyweb/lib/python3.6/site-packages/pandas/compat/__init__.py:85: UserWarning: Could not import the lzma module. Your installed Python is incomplete. Attempting to use lzma compression will result in a RuntimeError.
+  warnings.warn(msg)
+Internal Server Error: /query/onlypublishcs
+Traceback (most recent call last):
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/backends/utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 396, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such table: app_publisher
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./app/views.py", line 47, in query
+    show=controls.only_publish_cs()
+  File "./app/controls.py", line 201, in only_publish_cs
+    for item in ds:
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/models/query.py", line 276, in __iter__
+    self._fetch_all()
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/models/query.py", line 1261, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/models/query.py", line 115, in __iter__
+    for row in compiler.results_iter(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size):
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1089, in results_iter
+    results = self.execute_sql(MULTI, chunked_fetch=chunked_fetch, chunk_size=chunk_size)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1137, in execute_sql
+    cursor.execute(sql, params)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/backends/utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/backends/utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/backends/utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/backends/utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/backends/utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "/data/env/pyweb/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 396, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such table: app_publisher
+[pid: 56912|app: 0|req: 1/7] 167.220.232.102 () {48 vars in 955 bytes} [Fri Jan  3 05:56:12 2020] GET /query/onlypublishcs => generated 135477 bytes in 3601 msecs (HTTP/1.1 500) 5 headers in 157 bytes (1 switches on core 0)
